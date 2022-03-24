@@ -5,10 +5,14 @@ const express = require('express')
 
 
 // Importa o arquivo de Model de usuário
-const usuario = require('./model/Usuario')
+//const usuario = require('./model/Usuario')
 
 // Cria uma instância do pacote express para ser utilizada na aplicação
 const app = express()
+
+const router = require('./controller/UsuarioController')
+
+app.use(router)
 
 // Instância do servidor Express
 

@@ -43,8 +43,8 @@ const Usuario = connection.define('tblUsuario', {
     }
 })
 
-Usuario.sync({
-    force: true
-})
+// Usuario.sync({
+//     force: true
+// })
 
 module.exports = Usuario
