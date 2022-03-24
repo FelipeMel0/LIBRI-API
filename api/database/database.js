@@ -13,7 +13,7 @@ Parâmetros de conexão:
 
 */
 const connection = new sequelize('libri', 'root', '12345678', {
-    'host': 'localhost:3306',
+    'host': 'localhost',
     'dialect': 'mysql'
 })
 

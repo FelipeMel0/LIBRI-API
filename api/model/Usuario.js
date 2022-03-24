@@ -14,7 +14,8 @@ const Usuario = connection.define('tblUsuario', {
     idUsuario: {
         type: sequelize.INTEGER(10),
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
+        allowNull: false
     },
     nome: {
         type: sequelize.STRING(500),
