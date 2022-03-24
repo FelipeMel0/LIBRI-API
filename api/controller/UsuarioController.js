@@ -20,7 +20,22 @@ Parâmteros:
 
 router.post('/usuario/inserirUsuario', (req, res)=>{
 
-    res.status(200).json({message: 'Rota de inserão de usuário'})
+    // console.log(req.body)
+
+    const {nome, sobrenome, email, foto, login, senha} = req.body
+
+    const Usuario = usuario.create({
+        nome,
+        sobrenome,
+        email,
+        foto,
+        login,
+        senha
+    }).then(() => {
+        res.status(200).json('Usuário inserido, baby')
+    }
+    )
+
 
 })
 

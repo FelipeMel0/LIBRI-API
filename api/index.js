@@ -10,9 +10,14 @@ const express = require('express')
 // Cria uma instância do pacote express para ser utilizada na aplicação
 const app = express()
 
-const router = require('./controller/UsuarioController')
+const UsuarioController = require('./controller/UsuarioController')
 
-app.use(router)
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
+// Configuracão da rota de usuário
+
+app.use('/', UsuarioController)
 
 // Instância do servidor Express
 
