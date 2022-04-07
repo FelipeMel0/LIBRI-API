@@ -1,29 +1,23 @@
-// Importa o pacote express para a aplicação
-const express = require('express')
+/* IMPORTAÇÕES DE PACOTES */
+const express = require('express');
 
-// Importa o arquivo de conexão
+/* INSTANCIAS DE PACOTES */
+//express:
+const app = express();
 
+/* CONFIGURA O EXPRESS PARA LIDAR COM DADOS NO FORMATO JSON */
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Importa o arquivo de Model de usuário
-//const usuario = require('./model/Usuario')
+/* IMPORTA E CONFIGURA OS ARQUIVOS DE ROTAS DE USUÁRIOS */
+const usuarioController = require('./controller/UsuarioController');
+app.use('/', usuarioController);
 
-// Cria uma instância do pacote express para ser utilizada na aplicação
-const app = express()
+/* IMPORTA E CONFIGURA OS ARQUIVOS DE ROTAS DE LIVROS*/
+const livroController = require('./controller/LivroController');
+app.use('/', livroController);
 
-const UsuarioController = require('./controller/UsuarioController')
-
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
-
-// Configuracão da rota de usuário
-
-app.use('/', UsuarioController)
-
-// Instância do servidor Express
-
-app.listen(8081, () => {
-    console.log("Servidor rodando na url http://localhost:8081")
-    console.log("Sério, está rodando mesmo")
-}) //sempre será a última linha do código
-
-//No terminal, pressionar ctrl+c "fecha" o servidor
+/* INSTANCIA DO SERVIDOR (express) */
+app.listen(3000, ()=>{ 
+    console.log('SERVIDOR RODANDO NA URL: http://localhost:3000'); 
+});

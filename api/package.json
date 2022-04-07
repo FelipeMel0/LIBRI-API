@@ -1,16 +1,18 @@
 {
-  "name": "api",
+  "name": "api-libri",
   "version": "1.0.0",
-  "description": "APIREST para consumir dados de um banco de dados MySQL",
+  "description": "\"API DE EMXMPLO PARA AULA DE DESENVOLVIMENTO ANDROID. ACESSADO, CONSUMINDO E MANIPULANDO DADOS DE API COM USO DO RETROFIT\"",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
   "keywords": [
+    "ANDROID",
+    "RETROFIT",
+    "NODEJS",
     "API",
-    "MYSQL",
-    "ANDROID"
+    "APIREST"
   ],
   "author": "Felipe de Melo Fernandes",
   "license": "ISC",

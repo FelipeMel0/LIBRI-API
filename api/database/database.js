@@ -1,20 +1,20 @@
-//Importa o pacote Sequelize na aplicação
-const sequelize = require('Sequelize')
+/* IMPORTA O MÓDULO DO SEQUELIZE */
+const Sequelize = require('sequelize');
 
-//Cria uma constante nomeada como connection que vai representar a instância de conexão do Sequelize
-/*
-
-Parâmetros de conexão:
-
-1- nome do banco de dados
-2- usuário do banco de dados
-3- senha do banco de dados
-4- objeto JSON que determina o local onde o servico de banco de dades está sendo executado e o tipo de banco
-
+/* 
+CRIA UMA CONSTANTE "connection" QUE GUARDA UMA INSTANCIA DO sequelize E ABRE A 
+CONEXÃO COM O BANCO DE DADOS;
+PARAMETROS:
+1 - NOME DO BANCO DE DADOS
+2 - USUÁRIO DO BANCO DE DADOS
+3 - SENHA DO BANCO DE DADOS
+4 - OBJETO JSON QUE DETERMINA O LOCAL ONDE O BANCO DE DADOS ESTÁ LOCALIZADO E SEU TIPO
 */
-const connection = new sequelize('libri', 'root', '12345678', {
-    'host': 'localhost',
-    'dialect': 'mysql'
-})
+const connection = new Sequelize('dbLibriDS3M', 'root', '12345678', {
+    host: 'localhost',
+    dialect: 'mysql',
+    timezone: '-03:00'
+});
 
-module.exports = connection
+/* EXPORTA A CONSTANTE connection TORNANDO ESSA DISPONÍVEL EM TODA A APLICAÇÃO */
+module.exports = connection;

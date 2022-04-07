@@ -1,42 +1,47 @@
-const express = require('express')
+/* IMPORTA O MÓDULO DO express */
+const express = require('express');
 
-const usuario = require('../model/Usuario')
+/* IMPORTA O MODEL DE CATEGORIA */
+const usuario = require('../model/Usuario');
 
-//Criar instância de rotas
-const router = express.Router()
+/* CONFIGURA A FUNCIONALIDADE DE ROTAS  */
+const router = express.Router();
 
-//Cria as rotas
+router.get('/usuario/logarUsuario/:login/:senha', (req, res)=>{
 
-//Rota de inserção 
-/* 
+    const { login, senha } = req.params;
 
-O Router é capaz de receber requisicões de verbos HTTP
+    usuario.findAll({
+        where:{
+            login,
+            senha
+        }
+    })
+    .then(
+            (usuario)=>{
+                res.status(200).json(usuario);
+            }       
+    );
 
-Parâmteros:
-1 - String representando a rota em si
-2 - Um callback que trata a requisicão (req) e a resposta (res)
+});
 
-*/
+router.post('/usuario/cadastrarUsuario', (req, res)=>{
 
-router.post('/usuario/inserirUsuario', (req, res)=>{
+    const {nome, sobrenome, email, foto, login, senha} = req.body;
 
-    // console.log(req.body)
-
-    const {nome, sobrenome, email, foto, login, senha} = req.body
-
-    const Usuario = usuario.create({
-        nome,
+    usuario.create({
+        nome, 
         sobrenome,
         email,
         foto,
         login,
         senha
-    }).then(() => {
-        res.status(200).json('Usuário inserido, baby')
-    }
-    )
+    }).then(
+        ()=>{
+            res.status(200).json({"MSG": "USUÁRIO INSERIDO COM SUCESSO!"});
+        }
+    );
 
+});
 
-})
-
-module.exports = router
+module.exports = router;
