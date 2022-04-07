@@ -26,7 +26,7 @@ const Usuario = connection.define(
         },
         foto:{
             type:Sequelize.STRING(500),
-            allowNull: false
+            allowNull: true
         },
         login:{
             type:Sequelize.STRING(50),

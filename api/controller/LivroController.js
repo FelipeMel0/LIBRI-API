@@ -44,7 +44,7 @@ router.post('/livro/cadastrarLivro', (req, res)=>{
     livro.create({
         titulo, 
         descricao,
-        imagem,
+        imagem: "imagem",
         tblUsuarioCodUsuario
     }).then(
         ()=>{
