@@ -49,7 +49,7 @@ router.post('/usuario/cadastrarUsuario', (req, res) => {
     }).then(
         () => {
             res.status(200).json({
-                "MSG": "USUÁRIO INSERIDO COM SUCESSO!"
+                "MSG": "Usuário inserido com sucesso!"
             });
         }
     );

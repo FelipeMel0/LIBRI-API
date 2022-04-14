@@ -56,7 +56,7 @@ router.post('/livro/cadastrarLivro', (req, res) => {
     }).then(
         () => {
             res.status(200).json({
-                "MSG": "LIVRO INSERIDO COM SUCESSO!"
+                "MSG": "Livro inserido com sucesso!"
             });
         }
     );
@@ -85,7 +85,7 @@ router.put('/livro/alterarLivro', (req, res) => {
     }).then(
         () => {
             res.status(200).json({
-                "MSG": "LIVRO ALTERADO COM SUCESSO!"
+                "MSG": "Livro alterado com sucesso!"
             });
         }
     );
@@ -105,7 +105,7 @@ router.delete('/livro/excluirLivro/:cod_livro', (req, res) => {
     }).then(
         () => {
             res.status(200).json({
-                "MSG": "LIVRO EXCLUÍDO COM SUCESSO!"
+                "MSG": "Livro excluído com sucesso!"
             });
         }
     );

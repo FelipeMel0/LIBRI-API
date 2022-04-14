@@ -2,13 +2,13 @@
 const Sequelize = require('sequelize');
 
 /* 
-CRIA UMA CONSTANTE "connection" QUE GUARDA UMA INSTANCIA DO sequelize E ABRE A 
-CONEXÃO COM O BANCO DE DADOS;
-PARAMETROS:
-1 - NOME DO BANCO DE DADOS
-2 - USUÁRIO DO BANCO DE DADOS
-3 - SENHA DO BANCO DE DADOS
-4 - OBJETO JSON QUE DETERMINA O LOCAL ONDE O BANCO DE DADOS ESTÁ LOCALIZADO E SEU TIPO
+Cria uma constante "connection" que guarda uma instancia do Sequelize e abre a 
+conexão com o banco de dados.
+Parâmetros:
+1 - Nome do banco de dados
+2 - Usuário do banco de dados
+3 - Senha do banco de dados
+4 - Objeto json que determina o local onde o banco de dados está localizado e seu tipo
 */
 const connection = new Sequelize('dbLibriDS3M', 'root', '12345678', {
     host: 'localhost',
@@ -16,5 +16,5 @@ const connection = new Sequelize('dbLibriDS3M', 'root', '12345678', {
     timezone: '-03:00'
 });
 
-/* EXPORTA A CONSTANTE connection TORNANDO ESSA DISPONÍVEL EM TODA A APLICAÇÃO */
+/* Exporta a constante connection, tornando-a disponível em toda a aplicação. */
 module.exports = connection;

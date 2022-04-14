@@ -1,7 +1,7 @@
-/* IMPORTA O MÓDULO DO sequelize */
+/* Importa o módulo do sequelize */
 const Sequelize = require('sequelize');
 
-/* IMPORTA O ARQUIVO DE CONEXÃO COM BANCO DE DADOS */
+/* Importa o arquivo de conexão com banco de dados */
 const connection = require('../database/database');
 
 const Usuario = connection.define(

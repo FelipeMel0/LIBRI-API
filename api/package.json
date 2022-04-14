@@ -1,18 +1,18 @@
 {
   "name": "api-libri",
   "version": "1.0.0",
-  "description": "\"API DE EMXMPLO PARA AULA DE DESENVOLVIMENTO ANDROID. ACESSADO, CONSUMINDO E MANIPULANDO DADOS DE API COM USO DO RETROFIT\"",
+  "description": "\"API de exemplo para aula de desenvolvimento Android. Acessado, consumindo e manipulando dados de API com uso do Retrofit.\"",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
   "keywords": [
-    "ANDROID",
-    "RETROFIT",
-    "NODEJS",
+    "Android",
+    "Retrofit",
+    "NodeJs",
     "API",
-    "APIREST"
+    "APIRest"
   ],
   "author": "Felipe de Melo Fernandes",
   "license": "ISC",
