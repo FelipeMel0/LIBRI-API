@@ -7,80 +7,106 @@ const livro = require('../model/Livro');
 /* CONFIGURA A FUNCIONALIDADE DE ROTAS  */
 const router = express.Router();
 
-router.get('/livro/listarLivro', (req, res)=>{
+router.get('/livro/listarLivro', (req, res) => {
 
     livro.findAll()
         .then(
-                (livros)=>{
-                    res.status(200).json(livros);
-                }       
+            (livros) => {
+                res.status(200).json(livros);
+            }
         );
 
 });
 
-router.get('/livro/listarLivroId/:id', (req, res)=>{
+router.get('/livro/listarLivroId/:id', (req, res) => {
 
-    let { id } = req.params;
+    let {
+        id
+    } = req.params;
 
     console.log("ID" + id);
 
     livro.findAll({
-        where:{
-            cod_livro: id
-        }
-    })
-            .then(
-                (livro)=>{
-                    res.status(200).json(livro);
-                }       
+            where: {
+                cod_livro: id
+            }
+        })
+        .then(
+            (livro) => {
+                res.status(200).json(livro);
+            }
         );
 
 })
 
-router.post('/livro/cadastrarLivro', (req, res)=>{
+router.post('/livro/cadastrarLivro', (req, res) => {
 
-    const { titulo, descricao, imagem, tblUsuarioCodUsuario } = req.body;
+    const {
+        titulo,
+        descricao,
+        imagem,
+        tblUsuarioCodUsuario
+    } = req.body;
 
     livro.create({
-        titulo, 
+        titulo,
         descricao,
         imagem: "imagem",
         tblUsuarioCodUsuario
     }).then(
-        ()=>{
-            res.status(200).json({"MSG": "LIVRO INSERIDO COM SUCESSO!"});
+        () => {
+            res.status(200).json({
+                "MSG": "LIVRO INSERIDO COM SUCESSO!"
+            });
         }
     );
 
 });
 
-router.put('/livro/alterarLivro', (req, res)=>{
+router.put('/livro/alterarLivro', (req, res) => {
 
-    const { titulo, descricao, imagem, tblUsuarioCodUsuario, cod_livro } = req.body;
-
-    livro.update({
-        titulo, 
+    const {
+        titulo,
         descricao,
         imagem,
-        tblUsuarioCodUsuario},
-        {where: {cod_livro}}
-        ).then(
-        ()=>{
-            res.status(200).json({"MSG": "LIVRO ALTERADO COM SUCESSO!"});
+        tblUsuarioCodUsuario,
+        cod_livro
+    } = req.body;
+
+    livro.update({
+        titulo,
+        descricao,
+        imagem,
+        tblUsuarioCodUsuario
+    }, {
+        where: {
+            cod_livro
+        }
+    }).then(
+        () => {
+            res.status(200).json({
+                "MSG": "LIVRO ALTERADO COM SUCESSO!"
+            });
         }
     );
 
 });
 
-router.delete('/livro/excluirLivro/:cod_livro', (req, res)=>{
+router.delete('/livro/excluirLivro/:cod_livro', (req, res) => {
 
-    const { cod_livro } = req.params;
+    const {
+        cod_livro
+    } = req.params;
 
     livro.destroy({
-        where: {cod_livro}}
-        ).then(
-        ()=>{
-            res.status(200).json({"MSG": "LIVRO EXCLUÍDO COM SUCESSO!"});
+        where: {
+            cod_livro
+        }
+    }).then(
+        () => {
+            res.status(200).json({
+                "MSG": "LIVRO EXCLUÍDO COM SUCESSO!"
+            });
         }
     );
 

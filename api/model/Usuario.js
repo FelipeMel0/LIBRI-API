@@ -5,35 +5,34 @@ const Sequelize = require('sequelize');
 const connection = require('../database/database');
 
 const Usuario = connection.define(
-    'tblUsuario',
-    {
-        cod_usuario:{
+    'tblUsuario', {
+        cod_usuario: {
             type: Sequelize.INTEGER(10),
             primaryKey: true,
             autoIncrement: true
         },
-        nome:{
-            type:Sequelize.STRING(500),
+        nome: {
+            type: Sequelize.STRING(500),
             allowNull: false
         },
-        sobrenome:{
-            type:Sequelize.STRING(500),
+        sobrenome: {
+            type: Sequelize.STRING(500),
             allowNull: false
         },
-        email:{
-            type:Sequelize.STRING(500),
+        email: {
+            type: Sequelize.STRING(500),
             allowNull: false
         },
-        foto:{
-            type:Sequelize.STRING(500),
+        foto: {
+            type: Sequelize.STRING(500),
             allowNull: true
         },
-        login:{
-            type:Sequelize.STRING(50),
+        login: {
+            type: Sequelize.STRING(50),
             allowNull: false
         },
-        senha:{
-            type:Sequelize.STRING(50),
+        senha: {
+            type: Sequelize.STRING(50),
             allowNull: false
         }
     }

@@ -4,25 +4,24 @@ const Sequelize = require('sequelize');
 /* IMPORTA O ARQUIVO DE CONEXÃO COM BANCO DE DADOS */
 const connection = require('../database/database');
 
-const Usuario =  require('./Usuario');
+const Usuario = require('./Usuario');
 
-const Livro  = connection.define(
-    'tblLivro',
-    {
-        cod_livro:{
+const Livro = connection.define(
+    'tblLivro', {
+        cod_livro: {
             type: Sequelize.INTEGER(10),
             primaryKey: true,
             autoIncrement: true
         },
-        titulo:{
+        titulo: {
             type: Sequelize.STRING(200),
             allowNull: true
         },
-        descricao:{
+        descricao: {
             type: Sequelize.TEXT,
             allowNull: true
         },
-        imagem:{
+        imagem: {
             type: Sequelize.STRING(500),
             allowNull: true
         }

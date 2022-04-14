@@ -7,7 +7,9 @@ const app = express();
 
 /* CONFIGURA O EXPRESS PARA LIDAR COM DADOS NO FORMATO JSON */
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+    extended: true
+}));
 
 /* IMPORTA E CONFIGURA OS ARQUIVOS DE ROTAS DE USUÁRIOS */
 const usuarioController = require('./controller/UsuarioController');
@@ -18,6 +20,6 @@ const livroController = require('./controller/LivroController');
 app.use('/', livroController);
 
 /* INSTANCIA DO SERVIDOR (express) */
-app.listen(3000, ()=>{ 
-    console.log('SERVIDOR RODANDO NA URL: http://localhost:3000'); 
+app.listen(3000, () => {
+    console.log('SERVIDOR RODANDO NA URL: http://localhost:3000');
 });

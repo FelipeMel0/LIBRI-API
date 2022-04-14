@@ -7,38 +7,50 @@ const usuario = require('../model/Usuario');
 /* CONFIGURA A FUNCIONALIDADE DE ROTAS  */
 const router = express.Router();
 
-router.get('/usuario/logarUsuario/:login/:senha', (req, res)=>{
+router.get('/usuario/logarUsuario/:login/:senha', (req, res) => {
 
-    const { login, senha } = req.params;
+    const {
+        login,
+        senha
+    } = req.params;
 
     usuario.findAll({
-        where:{
-            login,
-            senha
-        }
-    })
-    .then(
-            (usuario)=>{
+            where: {
+                login,
+                senha
+            }
+        })
+        .then(
+            (usuario) => {
                 res.status(200).json(usuario);
-            }       
-    );
+            }
+        );
 
 });
 
-router.post('/usuario/cadastrarUsuario', (req, res)=>{
+router.post('/usuario/cadastrarUsuario', (req, res) => {
 
-    const {nome, sobrenome, email, foto, login, senha} = req.body;
+    const {
+        nome,
+        sobrenome,
+        email,
+        foto,
+        login,
+        senha
+    } = req.body;
 
     usuario.create({
-        nome, 
+        nome,
         sobrenome,
         email,
         foto,
         login,
         senha
     }).then(
-        ()=>{
-            res.status(200).json({"MSG": "USUÁRIO INSERIDO COM SUCESSO!"});
+        () => {
+            res.status(200).json({
+                "MSG": "USUÁRIO INSERIDO COM SUCESSO!"
+            });
         }
     );
 
